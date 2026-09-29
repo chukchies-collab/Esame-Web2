@@ -631,9 +631,12 @@ a:focus-visible {
 
 .records-table th,
 .records-table td {
-
+    padding: 20px 20px;
     text-align: left;
     vertical-align: top;
+    border-bottom:  0.3px var(--muted) solid;
+    background-color: var(--bg);
+    color: var(--accent-2);
 }
 
 .records-table th {
