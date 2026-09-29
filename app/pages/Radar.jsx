@@ -72,8 +72,8 @@ function Radar() {
 
         {/* TODO 2: Mancano le classi per alcuni elementi di questo gruppo di controlli. Cercale negli altri file e trova le classi corrette da applicare */}
         <div className="controls-bar">
-          <div className="">
-            <div className="">
+          <div className="controls-group">
+            <div className="field">
               <label htmlFor="top-limit-select">Quante storie vuoi vedere</label>
               <select
                 id="top-limit-select"
@@ -89,7 +89,7 @@ function Radar() {
           </div>
           <button
             id="top-refresh-button"
-            className=""
+            className="btn btn-primary"
             type="button"
             onClick={() => setReloadKey((current) => current + 1)}
           >
