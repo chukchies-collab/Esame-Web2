@@ -61,7 +61,7 @@ async function requestJson(url, errorPrefix) {
         return data;
     } catch (error) {
         
-        throw new Error(`${errorPrefix}: ${error}`);
+        throw new Error(`${errorPrefix}: ${error.message}`);
     }
 }
     // TODO 1: Implementare la fetch e restituire il JSON parsato

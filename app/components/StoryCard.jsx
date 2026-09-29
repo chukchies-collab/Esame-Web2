@@ -114,15 +114,8 @@ function StoryCard({
   );
 
   // TODO 1: Completare la card con i dati mancanti che vengono costruiti qui sopra.
-  // Nel h3 con classe story-card__title manca il titolo della storia, che deve essere un link
-  // che porta a 'threadHref'.
-  // Mancano tutti i meta dati nel div story-card__meta, ognuno dovrà esser contenuto in uno
-  // span con classe "chip" e una classe specifica per il tipo di dato (es. scoreLabel ->
-  // chip--score, commentsLabel -> chip--comments, timeLabel -> chip--time, authorLink -> chip--author).
-  // Infine manca il link alla fonte (sourceLink) da inserire dentro il div story-card__footer,
-  // prima del footnote con l'ID della storia.
   return (
-    <article
+  <article
       className={cardClasses.join(' ')}
       data-thread-href={threadHref}
       tabIndex={isInteractiveList ? 0 : undefined}
@@ -133,15 +126,28 @@ function StoryCard({
       <div className="story-card__top">
         <div className="story-card__heading">
           <p className="story-card__eyebrow">#{story.id}</p>
-          <h3 className="story-card__title"></h3>
+          {/* // Nel h3 con classe story-card__title manca il titolo della storia, che deve essere un link
+          // che porta a 'threadHref'. */}
+          <h3 className="story-card__title"> <a href={threadHref}>{title}</a> </h3>
         </div>
         {actions}
       </div>
 
-      <div className="story-card__meta"></div>
+      <div className="story-card__meta">
+        {/* // Mancano tutti i meta dati nel div story-card__meta, ognuno dovrà esser contenuto in uno
+        // span con classe "chip" e una classe specifica per il tipo di dato (es. scoreLabel ->
+        // chip--score, commentsLabel -> chip--comments, timeLabel -> chip--time, authorLink -> chip--author). */}
+        <span className="chip chip--score">{scoreLabel}</span>
+        <span className="chip chip--comments">{commentsLabel}</span>
+        <span className="chip chip--time">{timeLabel}</span>
+        <span className="chip chip--author">{authorLink}</span>
+      </div>
 
       <p className="story-card__excerpt">{excerpt}</p>
       <div className="story-card__footer">
+        {/* // Infine manca il link alla fonte (sourceLink) da inserire dentro il div story-card__footer,
+        // prima del footnote con l'ID della storia. */}
+        {sourceLink}
         <span className="story-card__footnote">ID {story.id}</span>
       </div>
     </article>
